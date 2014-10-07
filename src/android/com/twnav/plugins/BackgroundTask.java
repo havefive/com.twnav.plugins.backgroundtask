@@ -13,8 +13,7 @@ public class BackgroundTask extends CordovaPlugin {
 	public boolean execute(String action, JSONArray args,
 			CallbackContext callbackContext) throws JSONException {
 		if (action.equals("execute")) {
-			this.cordova.getActivity().getApplicationContext()
-					.moveTaskToBack(true);
+			this.cordova.getActivity().moveTaskToBack(true);
 			return true;
 		} else {
 			callbackContext.error("Invlid action");

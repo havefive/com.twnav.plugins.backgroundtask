@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0" id="com.twnav.plugins.backgroundtask" version="1.0.1">
+	<name>GPS Utils</name>
+	<description>背景執行</description>
+	<license>Apache 2.0</license>
+	<keywords>background, task</keywords>
+
+	<js-module src="www/BackgroundTask.js" name="BackgroundTask">
+		<clobbers target="window.plugins.BackgroundTask" />
+	</js-module>
+
+	<platform name="android">
+		<config-file target="res/xml/config.xml" parent="/*">
+			<feature name="GPSUtils">
+				<param name="android-package" value="com.twnav.plugins.BackgroundTask" />
+			</feature>
+		</config-file>
+		<source-file src="src/android/com/twnav/plugins/BackgroundTask.java" target-dir="src/com/twnav/plugins" />
+	</platform>
+</plugin>
